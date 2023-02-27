@@ -77,5 +77,26 @@ namespace Day15BinarySearchTree
                 return Size(node.left) + 1 + Size(node.right);
             }
         }
+
+        public Node Search(int data)
+        {
+            return Search(root, data);
+        }
+
+        private Node Search(Node node, int data)
+        {
+            if (node == null || node.data == data)
+            {
+                return node;
+            }
+            else if (data < node.data)
+            {
+                return Search(node.left, data);
+            }
+            else
+            {
+                return Search(node.right, data);
+            }
+        }
     }
 }
