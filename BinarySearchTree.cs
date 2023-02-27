@@ -65,5 +65,17 @@ namespace Day15BinarySearchTree
                 InorderTraversal(node.right);
             }
         }
+
+        public int Size(Node node)
+        {
+            if (node == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return Size(node.left) + 1 + Size(node.right);
+            }
+        }
     }
 }
